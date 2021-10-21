@@ -1,0 +1,38 @@
+#include<stdio.h>
+void accept(int*b,int n)                                                                     
+{                                                                                               
+	int i;
+	printf("Enter the elements\n");
+	for(i=0;i<n;i++)
+		scanf("%d",&b[i]);
+}
+void display(int*c,int n)
+{
+	int i;
+	printf("Array elements are\n");
+	for(i=0;i<n;i++)
+		printf("\n%d",c[i]);
+}
+int main()
+{
+    int a[10],n,i,j,k=0,l=0;
+    printf("Enter the no of elements in the array\n");
+    scanf("%d",&n);
+    accept(a,n);
+    display(a,n);
+    for(i=0;i<n;i++)
+    {
+        k=a[i];
+        for(j=i+1;j<n;j++)
+        {
+            if(k==a[j])
+                {
+                    l=1;
+                }
+         }
+    }
+    if(l==1)
+        printf("\nArray is not Distinct\n");
+    else
+        printf("\nArray is Distinct\n");
+}
