@@ -1,0 +1,33 @@
+#include<stdio.h>
+ int main()
+ {
+     int a[25],b[25],c=0,i,j,n;
+     printf("Enter the number of elements in an array\n");
+     scanf("%d",&n);
+     printf("Enter the elements of an array\n");
+     for(i=0;i<n;i++)
+        scanf("%d",&a[i]);
+     for(i=0;i<n;i++)
+     {
+         c=1;
+         if(a[i]!=-1)
+         {
+             for(j=i+1;j<n;j++)
+             {
+                 if(a[i]==a[j])
+                 {
+                     c++;
+                     a[j]=-1;
+                 }
+             }
+             b[i]=c; //array to store freq value of each element
+         }
+     }
+     for(i=0;i<n;i++)
+     {
+         if(a[i]!=-1)
+         {
+             printf("\nThe no of %d is %d\n",a[i],b[i]);
+         }
+     }
+ }
