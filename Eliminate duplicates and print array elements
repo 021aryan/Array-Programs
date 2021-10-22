@@ -1,0 +1,47 @@
+#include<stdio.h>
+
+void accept(int *a, int n)
+{
+	int i;
+	printf("Enter the array elements\n");
+	for(i=0;i<n;i++)
+		scanf("%d",&a[i]);
+}
+
+void display( int *a, int n)
+{
+	int i;
+	printf("\nArray elements are : \n ");
+	for(i=0;i<n;i++)
+		printf("\n%d",a[i]);
+}
+int main()
+{
+	int a[10],b[10],n,i,j,k,m,c=0;
+	printf("Enter the size of the array\n");
+	scanf("%d",&n);
+	accept(a,n);
+	display(a,n);
+	for(i=0;i<n;i++)
+	{
+		if(a[i]!=-1)
+		{
+			c=1;
+			k=a[i];
+			for(j=i+1;j<n;j++)
+			{
+				if(k==a[j])
+				{
+					c++;
+					a[j]=-1;
+				}
+			}
+			b[i]=c;
+		}
+	}
+	for(i=0;i<n;i++)
+	{
+		if(a[i]!=-1)
+			printf("\nThe element is %d ", a[i]);
+	}		
+}		
